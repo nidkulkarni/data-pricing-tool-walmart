@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Overall App Styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #f0f4f8, #d1e3f8);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  color: #333;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-out;
 }
 
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Styling */
+h1 {
+  color: #0071ce;
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 6px;
+  background: #0071ce;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Selector Styling */
+.selector, .customer-segment {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.selector select, .customer-segment select {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 22px;
+  font-size: 16px;
+  border: 2px solid #0071ce;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.selector select:hover, .customer-segment select:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.selector select:focus, .customer-segment select:focus {
+  border-color: #005bb5;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Currency Selector Styling */
+.currency-selector {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.currency-selector select {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 22px;
+  font-size: 16px;
+  border: 2px solid #f39c12;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.currency-selector select:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.currency-selector select:focus {
+  border-color: #e67e22;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* Pricing Info Styling */
+.pricing-info {
+  margin-top: 20px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.pricing-info:hover {
+  transform: translateY(-4px);
+  background: #f9f9f9;
+}
+
+.pricing-info h2, .pricing-info h3 {
+  margin: 10px 0;
+  color: #0071ce;
+  font-size: 1.6em;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Add 3D Button Effect */
+button {
+  padding: 14px 28px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #0071ce;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 10px;
+}
+
+button:hover {
+  background: #005bb5;
+  transform: translateY(-4px);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .selector select, .customer-segment select, .currency-selector select {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .pricing-info {
+    padding: 20px;
   }
 }
