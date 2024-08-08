@@ -1,3 +1,7 @@
+# Use this link to download the csv file "https://www.kaggle.com/datasets/yasserh/walmart-dataset"
+
+then name it as walmart_products.csv then store in the public section of your react app. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
